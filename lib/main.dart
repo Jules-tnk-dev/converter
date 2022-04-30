@@ -28,7 +28,10 @@ class MySplash extends StatelessWidget {
     return SplashScreen(
       seconds: 2,
       navigateAfterSeconds: App(),
-      title: Text('Converter',textScaleFactor: 2,),
+      title: Text(
+        'Converter',
+        textScaleFactor: 2,
+      ),
       //image: Image.network('https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png'),
       loadingText: Text("Loading"),
       photoSize: 100.0,
@@ -38,7 +41,7 @@ class MySplash extends StatelessWidget {
 }
 
 //Création de l'app avec state
-class App extends StatefulWidget{
+class App extends StatefulWidget {
   //création d'un state qui sera définie dans une autre class
   MyAppState createState() => MyAppState();
 }
@@ -48,7 +51,16 @@ class MyAppState extends State<App> {
   double _numberForm = 0;
   double _result = 0;
   String _resultMessage = '';
-  final List<String> _measures = ['meters', 'kilometers', 'grams', 'kilograms', 'feet', 'miles', 'pounds (lbs)', 'ounces',];
+  final List<String> _measures = [
+    'meters',
+    'kilometers',
+    'grams',
+    'kilograms',
+    'feet',
+    'miles',
+    'pounds (lbs)',
+    'ounces',
+  ];
   String? _startMeasures;
   String? _convertedMeasures;
 
@@ -252,8 +264,7 @@ class MyAppState extends State<App> {
       _resultMessage = 'This conversion cannot be performed';
     } else {
       _result = value * multiplier;
-      _resultMessage =
-          '${_result} $_convertedMeasures';
+      _resultMessage = '${_result} $_convertedMeasures';
     }
 
     setState(() {
